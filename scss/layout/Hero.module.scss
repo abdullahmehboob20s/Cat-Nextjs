@@ -1,0 +1,101 @@
+@use "../utils" as *;
+
+.wrapper {
+  min-height: 100vh;
+  background: url(../../public/images/hero-bg.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat no-repeat;
+  display: flex;
+  align-items: center;
+
+  main {
+    max-width: 50%;
+    width: 100%;
+
+    .bg_cat {
+      display: none;
+    }
+
+    button {
+      max-width: rem(280);
+      width: 100%;
+    }
+
+    .walletConnected {
+      display: flex;
+      align-items: center;
+
+      & > :not(:last-child) {
+        margin-right: rem(10);
+      }
+    }
+
+    .mintingNotAvailable {
+      padding: rem(16) rem(20);
+      border: rem(2) solid white;
+      border-radius: rem(8);
+      margin-top: rem(30);
+    }
+  }
+
+  @include breakpoint(xLarge) {
+    main {
+      .walletConnected {
+        flex-direction: column;
+        align-items: unset;
+
+        .walletId {
+          word-break: break-all;
+        }
+
+        & > :not(:last-child) {
+          margin-right: rem(0);
+          margin-bottom: rem(5);
+        }
+      }
+      button {
+        width: auto;
+        display: flex;
+      }
+
+      .logoImg {
+        max-width: rem(380);
+        width: 100%;
+      }
+    }
+  }
+
+  @include breakpoint(small) {
+    display: flex;
+    align-items: flex-start;
+    padding: rem(40) 0;
+    text-align: center;
+    justify-content: center;
+    background: url(../../public/images/hero-bgs/cat-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      max-width: 100%;
+      width: 100%;
+
+      .logoImg {
+        max-width: rem(220);
+        width: 100%;
+      }
+
+      .bg_cat {
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: rem(80);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use "../globals/colors" as colors;
+@use "../utils" as *;
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.button-yellow {
+  background-color: colors.$yellow;
+  padding: rem(14) rem(34);
+  box-shadow: 0 0 rem(12) rgba(0, 0, 0, 0.2);
+
+  @include breakpoint(xLarge) {
+    padding: rem(12) rem(30);
+  }
+}
